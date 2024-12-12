@@ -1,0 +1,172 @@
+hydra:
+  run:
+    dir: /media/data1/yrq/ocr/1109/ocr_training
+  sweep:
+    dir: multirun/${model.name}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+    subdir: ${hydra.job.override_dirname}
+  launcher:
+    _target_: hydra._internal.core_plugins.basic_launcher.BasicLauncher
+  sweeper:
+    _target_: hydra._internal.core_plugins.basic_sweeper.BasicSweeper
+    max_batch_size: null
+    params: null
+  help:
+    app_name: ${hydra.job.name}
+    header: '${hydra.help.app_name} is powered by Hydra.
+
+      '
+    footer: 'Powered by Hydra (https://hydra.cc)
+
+      Use --hydra-help to view Hydra specific help
+
+      '
+    template: '${hydra.help.header}
+
+      == Configuration groups ==
+
+      Compose your configuration from those groups (group=option)
+
+
+      $APP_CONFIG_GROUPS
+
+
+      == Config ==
+
+      Override anything in the config (foo.bar=value)
+
+
+      $CONFIG
+
+
+      ${hydra.help.footer}
+
+      '
+  hydra_help:
+    template: 'Hydra (${hydra.runtime.version})
+
+      See https://hydra.cc for more info.
+
+
+      == Flags ==
+
+      $FLAGS_HELP
+
+
+      == Configuration groups ==
+
+      Compose your configuration from those groups (For example, append hydra/job_logging=disabled
+      to command line)
+
+
+      $HYDRA_CONFIG_GROUPS
+
+
+      Use ''--cfg hydra'' to Show the Hydra config.
+
+      '
+    hydra_help: ???
+  hydra_logging:
+    version: 1
+    formatters:
+      simple:
+        format: '[%(asctime)s][HYDRA] %(message)s'
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+    root:
+      level: INFO
+      handlers:
+      - console
+    loggers:
+      logging_example:
+        level: DEBUG
+    disable_existing_loggers: false
+  job_logging:
+    version: 1
+    formatters:
+      simple:
+        format: '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+      file:
+        class: logging.FileHandler
+        formatter: simple
+        filename: ${hydra.runtime.output_dir}/${hydra.job.name}.log
+    root:
+      level: INFO
+      handlers:
+      - console
+      - file
+    disable_existing_loggers: false
+  env: {}
+  mode: RUN
+  searchpath: []
+  callbacks: {}
+  output_subdir: config
+  overrides:
+    hydra:
+    - hydra.run.dir=outputs/ship/maevit_infonce_plm
+    - hydra.run.dir="/media/data1/yrq/ocr/1109/ocr_training"
+    - hydra.job.name=train_ddp_process_1
+    - hydra.mode=RUN
+    task:
+    - model.img_size=[224,224]
+    - charset=SLP34K_568
+    - dataset=SLP34K
+    - model.batch_size=60
+    - trainer.gpus=2
+    - trainer.val_check_interval=200
+    - model=maevit_infonce_plm
+    - trainer.max_epochs=100
+    - model.max_label_length=50
+    - +trainer.accumulate_grad_batches=5
+    - ckpt_path=/media/data1/yrq/ocr/1109/ocr_training/outputs/ship/maevit_infonce_plm_test3/checkpoints/last.ckpt
+  job:
+    name: train_ddp_process_1
+    chdir: null
+    override_dirname: +trainer.accumulate_grad_batches=5,charset=SLP34K_568,ckpt_path=/media/data1/yrq/ocr/1109/ocr_training/outputs/ship/maevit_infonce_plm_test3/checkpoints/last.ckpt,dataset=SLP34K,model.batch_size=60,model.img_size=[224,224],model.max_label_length=50,model=maevit_infonce_plm,trainer.gpus=2,trainer.max_epochs=100,trainer.val_check_interval=200
+    id: ???
+    num: ???
+    config_name: main
+    env_set: {}
+    env_copy: []
+    config:
+      override_dirname:
+        kv_sep: '='
+        item_sep: ','
+        exclude_keys: []
+  runtime:
+    version: 1.2.0
+    version_base: '1.2'
+    cwd: /media/data1/yrq/ocr/1109/ocr_training
+    config_sources:
+    - path: hydra.conf
+      schema: pkg
+      provider: hydra
+    - path: /media/data1/yrq/ocr/1109/ocr_training/configs
+      schema: file
+      provider: main
+    - path: ''
+      schema: structured
+      provider: schema
+    output_dir: /media/data1/yrq/ocr/1109/ocr_training
+    choices:
+      pretrained: null
+      dataset: SLP34K
+      charset: SLP34K_568
+      model: maevit_infonce_plm
+      hydra/env: default
+      hydra/callbacks: null
+      hydra/job_logging: default
+      hydra/hydra_logging: default
+      hydra/hydra_help: default
+      hydra/help: default
+      hydra/sweeper: basic
+      hydra/launcher: basic
+      hydra/output: default
+  verbose: false

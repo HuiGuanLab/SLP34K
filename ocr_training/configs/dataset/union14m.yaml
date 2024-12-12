@@ -1,0 +1,5 @@
+# @package _global_
+data:
+  train_dir: lmdb_format
+  val_dir: lmdb_format
+  test_dir: Union14m_benchmark

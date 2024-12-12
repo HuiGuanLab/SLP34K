@@ -1,0 +1,11 @@
+- model.img_size=[224,224]
+- charset=SLP34K_568
+- dataset=SLP34K
+- model.batch_size=60
+- trainer.gpus=2
+- trainer.val_check_interval=200
+- model=maevit_infonce_plm
+- trainer.max_epochs=100
+- model.max_label_length=50
+- +trainer.accumulate_grad_batches=5
+- ckpt_path=/media/data1/yrq/ocr/1109/ocr_training/outputs/ship/maevit_infonce_plm_test3/checkpoints/last.ckpt

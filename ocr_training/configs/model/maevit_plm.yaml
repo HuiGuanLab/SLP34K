@@ -1,0 +1,42 @@
+name: maevit_plm
+_target_: strhub.models.maevit_plm.system.Model
+
+# model
+embed_dim: 768
+mae_pretrained_path: pretrain_model/ship/224x224_pretrain_ship_vit_checkpoint-1499.pth
+dec_num_heads: 12
+dec_mlp_ratio: 4
+dec_depth: 3
+
+# Training
+lr: 8.4e-5
+perm_num: 6
+perm_forward: true
+perm_mirrored: true
+dropout: 0.1
+coef_lr: 19.0
+coef_wd: 1.0
+
+# Decoding mode (test)
+decode_ar: true
+refine_iters: 1
+
+
+#    | Name                 | Type                         | Params
+# -----------------------------------------------------------------------
+# 0  | encoder              | MaskedAutoencoderViT_Encoder | 85.8 M
+# 1  | encoder.patch_embed  | PatchEmbed                   | 590 K 
+# 2  | encoder.blocks       | ModuleList                   | 85.1 M
+# 3  | encoder.norm         | LayerNorm                    | 1.5 K 
+# 4  | decoder              | Decoder                      | 28.4 M
+# 5  | decoder.layers       | ModuleList                   | 28.4 M
+# 6  | decoder.norm         | LayerNorm                    | 1.5 K 
+# 7  | head                 | Linear                       | 437 K 
+# 8  | text_embed           | TokenEmbedding               | 438 K 
+# 9  | text_embed.embedding | Embedding                    | 438 K 
+# 10 | dropout              | Dropout                      | 0     
+# -----------------------------------------------------------------------
+# 114 M     Trainable params
+# 151 K     Non-trainable params
+# 115 M     Total params
+# 460.302   Total estimated model params size (MB)

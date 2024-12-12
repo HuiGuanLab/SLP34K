@@ -1,0 +1,47 @@
+name: maevit_infonce_plm
+_target_: strhub.models.maevit_infonce_plm.system.Model
+
+# model
+embed_dim: 768
+mae_pretrained_path: pretrain_model/ship/224x224_pretrain_ship_vit_checkpoint-1499.pth
+dec_num_heads: 12
+dec_mlp_ratio: 4
+dec_depth: 3
+
+# Training
+lr: 8.4e-5
+perm_num: 6
+perm_forward: true
+perm_mirrored: true
+dropout: 0.1
+coef_lr: 19.0
+coef_wd: 1.0
+
+# Decoding mode (test)
+decode_ar: true
+refine_iters: 1
+
+
+#    | Name                       | Type                         | Params
+# -----------------------------------------------------------------------------
+# 0  | encoder                    | MaskedAutoencoderViT_Encoder | 85.8 M
+# 1  | encoder.patch_embed        | PatchEmbed                   | 590 K 
+# 2  | encoder.blocks             | ModuleList                   | 85.1 M
+# 3  | encoder.norm               | LayerNorm                    | 1.5 K 
+# 4  | clip_model                 | CLIP                         | 63.4 M
+# 5  | clip_model.transformer     | Transformer                  | 37.8 M
+# 6  | clip_model.token_embedding | Embedding                    | 25.3 M
+# 7  | clip_model.ln_final        | LayerNorm                    | 1.0 K 
+# 8  | InfoNCELoss                | InfoNCELoss                  | 0     
+# 9  | decoder                    | Decoder                      | 28.4 M
+# 10 | decoder.layers             | ModuleList                   | 28.4 M
+# 11 | decoder.norm               | LayerNorm                    | 1.5 K 
+# 12 | head                       | Linear                       | 437 K 
+# 13 | text_embed                 | TokenEmbedding               | 438 K 
+# 14 | text_embed.embedding       | Embedding                    | 438 K 
+# 15 | dropout                    | Dropout                      | 0     
+# -----------------------------------------------------------------------------
+# 115 M     Trainable params
+# 63.3 M    Non-trainable params
+# 178 M     Total params
+# 715.587   Total estimated model params size (MB)
