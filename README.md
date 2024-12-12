@@ -44,17 +44,15 @@ We also propose a simple yet effective SLP recognition baseline method, with a s
 ## 1.1 Anonymous code acquisition
 
 ```shell
-git clone https://github.com/kynehc/clone_anonymous_github.git
-cd clone_anonymous_github
-python download.py --url https://anonymous.4open.science/r/1109-0B02/ --dir slp34k_rec/
-
+git clone https://github.com/HuiGuanLab/SLP34K.git
+cd SLP34K
 ```
 We use Anaconda as a virtual environment setup tool for model training. Next, we will introduce the training environment setup steps for self-supervised pretraining and SLP recognition fine-tuning, as well as the required installation configuration files. Due to conflicts between certain software package versions, our pre-training and fine-tuning were completed in two different virtual environments.
 
 ## 1.2 Self-supervised pre-training environment
 ```shell
 
-cd slp34k_rec/mae
+cd SLP34K/mae
 conda create -n slk34k_mae python=3.8
 conda activate slk34k_mae
 pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
@@ -66,7 +64,7 @@ pip install -r requirements.txt
 ## 1.3 SLP recognition fine-tuning environment
 
 ```shell
-cd slp34k_rec/ocr_training
+cd SLP34K/ocr_training
 conda create --name slk34k_rec python=3.9
 conda activate slk34k_rec
 pip install -r requirements.txt
