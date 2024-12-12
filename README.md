@@ -16,7 +16,7 @@ We also propose a simple yet effective SLP recognition baseline method, with a s
 - [Towards Ship License Plate Recognition in the Wild: A Large Benchmark and Strong Baseline](#towards-ship-license-plate-recognition-in-the-wild-a-large-benchmark-and-strong-baseline)
 - [Table of Contents](#table-of-contents)
 - [1. Runtime environment](#1-runtime-environment)
-  - [1.1 Anonymous code acquisition](#11-anonymous-code-acquisition)
+  - [1.1 code acquisition](#11-code-acquisition)
   - [1.2 Self-supervised pre-training environment](#12-self-supervised-pre-training-environment)
   - [1.3 SLP recognition fine-tuning environment](#13-slp-recognition-fine-tuning-environment)
 - [2. Dataset and pre-trained models download](#2-dataset-and-pre-trained-models-download)
@@ -41,7 +41,7 @@ We also propose a simple yet effective SLP recognition baseline method, with a s
 
 ![.](https://img.shields.io/badge/Python-3.9-yellow) ![.](https://img.shields.io/badge/Pytorch-1.12.1-yellow)  
 
-## 1.1 Anonymous code acquisition
+## 1.1 code acquisition
 
 ```shell
 git clone https://github.com/HuiGuanLab/SLP34K.git
@@ -75,10 +75,10 @@ pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --e
 
 ## 2.1 Dataset download
 
-| Dataset   | File Size | Format      | Download link.                                                                                        |
-| --------- | --------- | ---------- | ----------------------------------------------------------------------------------------------------- |
-| SLP34K.7z | 153.8 MB  | JPG | [Google Drive](https://drive.google.com/file/d/1Wcui9wxRM_-Qj7zOmWNx43DnbNZRq0jP/view?usp=drive_link) |
-| data.7z   | 6.36 GB   | lmdb       | [Google Drive](https://drive.google.com/file/d/1tGtpSXzuU1CYq-Sofo1rAD4jr4XLiOkO/view?usp=drive_link) |
+| Dataset   | File Size | Format | Download link.                                                                                        |
+| --------- | --------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| SLP34K.7z | 153.8 MB  | JPG    | [Google Drive](https://drive.google.com/file/d/1Wcui9wxRM_-Qj7zOmWNx43DnbNZRq0jP/view?usp=drive_link) |
+| data.7z   | 6.36 GB   | lmdb   | [Google Drive](https://drive.google.com/file/d/1tGtpSXzuU1CYq-Sofo1rAD4jr4XLiOkO/view?usp=drive_link) |
 
 SLP34K.7z is the raw image of the SLP sample, and data.7z is the corresponding sample in lmdb format.
 
@@ -118,10 +118,10 @@ Download the **data.7z** file, extract it, and place it in the **ocr_training/da
 ## 2.2 Pre-trained models download
 
 
-| CheckPoint        | File Size | Usage                         | Google Drive                                                                                          |
-| ----------------- | --------- | ----------------------------- | ----------------------------------------------------------------------------------------------------- |
-| pretrain_model.7z | 2.2GB     | Pre-trained weights         | [Google Drive](https://drive.google.com/file/d/1K6jmsRNvnKL5om352MJ7CU3K0xA7EjtN/view?usp=drive_link) |
-| checkpoint.7z     | 2.7GB     | SLP recognition | [Google Drive](https://drive.google.com/file/d/1s1VHmofcvZic0WkVxfx1PHv2F5MOS-VH/view?usp=drive_link) |
+| CheckPoint        | File Size | Usage               | Google Drive                                                                                          |
+| ----------------- | --------- | ------------------- | ----------------------------------------------------------------------------------------------------- |
+| pretrain_model.7z | 2.2GB     | Pre-trained weights | [Google Drive](https://drive.google.com/file/d/1K6jmsRNvnKL5om352MJ7CU3K0xA7EjtN/view?usp=drive_link) |
+| checkpoint.7z     | 2.7GB     | SLP recognition     | [Google Drive](https://drive.google.com/file/d/1s1VHmofcvZic0WkVxfx1PHv2F5MOS-VH/view?usp=drive_link) |
 
 
 Download the weights above, unzip them, and place them in the **ocr_training/** directory. 
