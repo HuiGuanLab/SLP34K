@@ -45,7 +45,6 @@ We also propose a simple yet effective SLP recognition baseline method, with a s
 
 ```shell
 git clone https://github.com/HuiGuanLab/SLP34K.git
-cd SLP34K
 ```
 We use Anaconda as a virtual environment setup tool for model training. Next, we will introduce the training environment setup steps for self-supervised pretraining and SLP recognition fine-tuning, as well as the required installation configuration files. Due to conflicts between certain software package versions, our pre-training and fine-tuning were completed in two different virtual environments.
 
