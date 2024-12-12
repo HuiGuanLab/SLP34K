@@ -41,7 +41,7 @@ We also propose a simple yet effective SLP recognition baseline method, with a s
 
 ![.](https://img.shields.io/badge/Python-3.9-yellow) ![.](https://img.shields.io/badge/Pytorch-1.12.1-yellow)  
 
-## 1.1 code acquisition
+## 1.1 Code acquisition
 
 ```shell
 git clone https://github.com/HuiGuanLab/SLP34K.git
