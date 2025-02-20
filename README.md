@@ -76,8 +76,8 @@ pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --e
 
 | Dataset   | File Size | Format | Download link.                                                                                        |
 | --------- | --------- | ------ | ----------------------------------------------------------------------------------------------------- |
-| SLP34K.7z | 153.8 MB  | JPG    | [Google Drive](https://drive.google.com/file/d/1Wcui9wxRM_-Qj7zOmWNx43DnbNZRq0jP/view?usp=drive_link) |
-| data.7z   | 6.36 GB   | lmdb   | [Google Drive](https://drive.google.com/file/d/1tGtpSXzuU1CYq-Sofo1rAD4jr4XLiOkO/view?usp=drive_link) |
+| SLP34K.7z | 153.8 MB  | JPG    | Coming soon... |
+| data.7z   | 6.36 GB   | lmdb   | Coming soon... |
 
 SLP34K.7z is the raw image of the SLP sample, and data.7z is the corresponding sample in lmdb format.
 
