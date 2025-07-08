@@ -12,7 +12,7 @@ In this work, we first built a large dataset called SLP34K. The dataset was coll
 We also propose a simple yet effective SLP recognition baseline method, with a strong visual encoder. The strong visual encoder is achieved by two strategies. First, we employ self-supervised learning, to pre-train the visual encoder, which enables the encoder to learn robust visual representations without labeled data. Second, we refine the encoder via a semantic enhancement module, which finetunes the encoder via a contrastive learning mechanism to enhance the semantic consistency between the SLP image and its corresponding text label.
 
 
-***Note:*** The link to our main AAAI2025 paper is [here](URL "https://ojs.aaai.org/index.php/AAAI/article/view/32569"). Additionally, supplementary materials are available in [this project directory](./aaai2025_ocr_supp.pdf). Dataset access requires an application and signed [usage agreement](./SLP34K Dataset License Agreement.pdf).
+***Note:*** The link to our main AAAI2025 paper is [here](URL "https://ojs.aaai.org/index.php/AAAI/article/view/32569"). Additionally, supplementary materials are available in [this project directory](./aaai2025_ocr_supp.pdf). Dataset access requires an application and signed [usage agreement](./SLP34K_Dataset_License_Agreement.pdf).
 
 
 
