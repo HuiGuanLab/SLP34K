@@ -74,10 +74,13 @@ pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --e
 
 ## 2.1 Dataset download
 
-| Dataset   | File Size | Format | Download link.                                                                                        |
-| --------- | --------- | ------ | ----------------------------------------------------------------------------------------------------- |
-| SLP34K.7z | 153.8 MB  | JPG    | Coming soon... |
-| data.7z   | 6.36 GB   | lmdb   | Coming soon... |
+Before formally accessing the dataset, applicants must sign a dataset license agreement (SLP34K Dataset License Agreement.pdf in this project). Please print the license agreement, hand-sign it, scan the signed document, and email it to us from ***your official institutional email address*** to apply for dataset access (mailto: liubaolongx@gmail.com or dongjf24@gmail.com). Upon receiving your signed license agreement, we will provide you with the dataset download link.
+
+
+| Dataset   | File Size | Format |
+| --------- | --------- | ------ |
+| SLP34K.7z | 153.8 MB  | JPG    | 
+| data.7z   | 6.36 GB   | lmdb   | 
 
 SLP34K.7z is the raw image of the SLP sample, and data.7z is the corresponding sample in lmdb format.
 
